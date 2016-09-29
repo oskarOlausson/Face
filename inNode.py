@@ -15,6 +15,7 @@ class InNode:
         self.pixel = pixel
 
     def reset_weights(self):
-        for
+        for edge in self.edges:
+            edge.reset_weight()
 
 

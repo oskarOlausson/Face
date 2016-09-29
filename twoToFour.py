@@ -8,13 +8,15 @@ class Solver():
         _=0
 
 
-    def ai(self,test,learningRate):
+    def ai(self,test_list,learningRate):
         w1 = 0.5
         w2 = 0.5
         w3 = 0.5
         w4 = 0.5
 
-        for i in range(0,50000):
+        for ins, outs in test_list:
+            
+            
             number = 0
 
             inp = [0] * 2
@@ -63,7 +65,15 @@ if __name__ == "__main__":
     solver = Solver()
 
     # 3>2 --> True
-    test = [2, 0, 0.5, 0.2]
+    ins = list()
+    outs = list()
+    
+    # apend ins & outs
+    for i in range(0,1)
+    
+    test = (ins, outs)
+    test_list = list()
+    test_list.append(test)
 
     solver.ai(test,3)
 

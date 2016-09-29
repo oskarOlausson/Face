@@ -1,13 +1,21 @@
-import numpy
 
 class Image():
 
     def __init__(self,path):
         f = open(path)
         self.img = f.readlines()
+        f.close()
         self.current_line = 0
         self.currentImage = self.parse_next_image()
-        f.close()
+        self.nrOfImages = self.readNrOfImages()
+
+    def readNrOfImages(self):
+        information = self.img[1]
+        for i in information.replace("(","( ").replace(" )"," ").split():
+            if is_int(i):
+                return int(i)
+        return -1
+
 
     def reset_current_line(self):
         self.current_line = 0
@@ -43,13 +51,19 @@ class Image():
     def check_pixel(self,x,y):
         return self.currentImage[y][x]
 
-
+def is_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
 
 if __name__ == "__main__":
 
     img = Image('./material/training-A.txt')
-    img.parse_next_image()
-    print(img.check_pixel(1,1))
+
+    print(img.readNrOfImages())
+
 
 
 

@@ -3,10 +3,10 @@ from outNode import OutNode
 from constants import Constants
 
 class Edge:
-    def __init__(self, out_value, weight, constants):
+    def __init__(self, out, constants):
         self.learning_rate = constants.get_learning_rate()
-        self.weight = weight
-        self.out = OutNode(out_value)
+        self.weight = constants.get_start_weight()
+        self.out = out
 
     def get_weight(self):
         return self.weight

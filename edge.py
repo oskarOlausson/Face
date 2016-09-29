@@ -15,5 +15,3 @@ class Edge:
         weight = (self.out.get_value() - facit) * self.out.get_value() * (1 - self.out.get_value()) * input
         self.weight -= (weight * self.learning_rate)
 
-    def get_learning(self):
-        return self.learning_rate
